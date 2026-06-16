@@ -1,0 +1,122 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body, #root {
+  height: 100%;
+  background-color: #0d0d12;
+  color: #f1f5f9;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow: hidden;
+  user-select: none;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(124, 58, 237, 0.3); border-radius: 999px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(124, 58, 237, 0.6); }
+
+/* Hide scrollbar helper */
+.scrollbar-hide::-webkit-scrollbar { display: none; }
+.scrollbar-hide { scrollbar-width: none; -ms-overflow-style: none; }
+
+/* Draggable window region (topbar) */
+.drag-region { -webkit-app-region: drag; }
+.no-drag { -webkit-app-region: no-drag; }
+
+/* Video element */
+video {
+  display: block;
+  outline: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Range input */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 3px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.15);
+  outline: none;
+  cursor: pointer;
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 14px; height: 14px;
+  border-radius: 50%;
+  background: #7c3aed;
+  cursor: pointer;
+  box-shadow: 0 0 6px rgba(124,58,237,0.6);
+  transition: transform 0.15s;
+}
+input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.2); }
+
+/* Animated gradient background for hero */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animated-gradient {
+  background: linear-gradient(-45deg, #0d0d12, #1a1a2e, #12121a, #0f0f1a);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+}
+
+/* Glass effect */
+.glass {
+  background: rgba(26, 26, 46, 0.8);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Glow pulse for live indicator */
+@keyframes livePulse {
+  0%, 100% { opacity: 1; box-shadow: 0 0 4px #ef4444; }
+  50% { opacity: 0.6; box-shadow: 0 0 8px #ef4444; }
+}
+.live-dot {
+  animation: livePulse 1.5s ease-in-out infinite;
+}
+
+/* Channel card image container - uniform sizing */
+.channel-logo-container {
+  position: relative;
+  overflow: hidden;
+  background: #12121a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.channel-logo-container img {
+  max-width: 80%;
+  max-height: 80%;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+/* Smooth transitions */
+a, button { transition: color 0.15s, background-color 0.15s, border-color 0.15s, opacity 0.15s; }
+
+/* Focus ring */
+:focus-visible {
+  outline: 2px solid rgba(124, 58, 237, 0.7);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Prevent text selection in UI elements */
+nav, aside, header { user-select: none; }
+
+/* Allow text selection in inputs and content */
+input, textarea, p, h1, h2, h3 { user-select: text; }
