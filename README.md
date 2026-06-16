@@ -5,6 +5,12 @@ A modern, free, open-source IPTV desktop player built with Electron + React. Net
 ![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
+## Screenshots
+
+![IPTV Player 1](https://jurs.goodbits.tech/assets/img/iptv1.png)
+
+![IPTV Player 2](https://jurs.goodbits.tech/assets/img/iptv2.png)
+
 ## Features
 
 - 🎬 Netflix/Pluto TV-style dark UI with smooth Framer Motion animations
